@@ -1,0 +1,11 @@
+{
+    "type": "record",
+    "namespace": "com.manning.liveproject",
+    "name": "error_processing",
+    "fields": [
+      { "name": "source_event_serialized", "type": "string" },
+      { "name": "timestamp", "type": "datetime" },
+      { "name": "error_code", "type": "string" },
+      { "name": "error_text", "type": "string" }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "type": "record",
+    "namespace": "com.manning.liveproject",
+    "name": "order_confirmed",
+    "fields": [
+      { "name": "order_id", "type": "int" },
+      { "name": "status", "type": "string" },
+      { "name": "items" , "type": {
+            "type": "array",
+            "items": {
+                "name": "order_item",
+                "type": "record",
+                "fields": [
+                    {"name": "sku", "type": "string"},
+                    {"name": "name", "type": "string"},
+                    {"name": "quantity", "type": "int"},
+                    {"name": "price", "type": "int"}
+                ]
+            }
+        }
+      },
+      { "name": "total_price", "type": "int" },
+      { "name": "confirmed_at", "type": "datetime" },
+      { "name": "confirmed_by", "type": "datetime" },
+      { "name": "shipping_address", "type": "record", "fields": [
+            {"name": "name", "type": "string"},
+            {"name": "street", "type": "string"},
+            {"name": "street_nr", "type": "string"},
+            {"name": "city", "type": "string"},
+            {"name": "country", "type": "string"},
+            {"name": "postal_code", "type": "int"}
+      ]}
+    ]
+}
